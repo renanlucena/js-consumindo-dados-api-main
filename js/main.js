@@ -16,3 +16,6 @@ async function buscaEndereco(cep) {
     }
 }
 
+var cep = document.getElementById('cep');
+cep.addEventListener("focusout", ()=> buscaEndereco(cep.value));
+
