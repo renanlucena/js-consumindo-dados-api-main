@@ -1,5 +1,6 @@
 async function buscaEndereco(cep) {
-
+    var mensagemErro = document.getElementById('erro');
+    mensagemErro.innerHTML = "";
 
     try{
     var consultaCep = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
@@ -21,6 +22,7 @@ async function buscaEndereco(cep) {
     
     
     }catch(erro){
+        mensagemErro.innerHTML = `<p>CEP inválido. Tente novamente!</p>`;
         console.log(erro);
     }
 }
